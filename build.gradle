@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'br.com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	implementation 'org.apache.camel:camel-spring-boot-starter:2.25.3'
+	implementation 'org.apache.camel:camel-servlet-starter:2.25.3'
+	implementation 'org.apache.camel:camel-http4-starter:2.25.3'
+	implementation 'org.apache.camel:camel-jackson-starter:2.25.3'
+	implementation 'org.apache.camel:camel-script-starter:2.25.3'
+	implementation 'org.apache.camel:camel-jsonpath-starter:2.25.3'
+	implementation 'org.apache.camel:camel-groovy-starter:2.25.3'
+  	implementation 'org.apache.camel:camel-groovy:2.25.3'
+  	implementation 'org.apache.camel:camel-jackson:2.25.3'
+  	
+  	implementation "org.codehaus.groovy:groovy-json:2.5.8"
+}
+
+test {
+	useJUnitPlatform()
+}
