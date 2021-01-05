@@ -3,6 +3,7 @@ package br.com.roadway.user.route;
 import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.stereotype.Component;
 
+import br.com.roadway.routes.ConnectCreateUsersRoute;
 import br.com.roadway.routes.SaarCreatePersonRoute;
 
 @Component
@@ -16,9 +17,11 @@ public class UserCreatorRoute extends SpringRouteBuilder {
 		.doTry()
 			.routeId(UserCreatorRoute.class.getName()+"_ID")
 			.setProperty("createRequest").simple("${body}")
-			.log(" ${exchangeProperty.createRequest}")
 			.setProperty("token", header("Authorization"))
+			.log("[USER-CREATOR-ROUTER] Criando Person no Saar.")
 			.toD(SaarCreatePersonRoute.DIRECT_SAAR_CREATE_PERSON)
+			.log("[USER-CREATOR-ROUTER] Criando User no connect.")
+			.toD(ConnectCreateUsersRoute.DIRECT_CONNECT_CREATE_USER)
 			.end();
 	}
 
