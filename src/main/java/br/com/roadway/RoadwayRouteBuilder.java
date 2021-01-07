@@ -1,7 +1,6 @@
 package br.com.roadway;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.model.dataformat.JsonLibrary;
 import org.apache.camel.spring.SpringRouteBuilder;
 
 public abstract class RoadwayRouteBuilder extends SpringRouteBuilder {
