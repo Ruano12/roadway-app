@@ -1,14 +1,14 @@
 package br.com.roadway.user.route;
 
-import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.stereotype.Component;
 
+import br.com.roadway.RoadwayRouteBuilder;
 import br.com.roadway.routes.ConnectCreateUsersRoute;
 import br.com.roadway.routes.SaarCreatePersonRoute;
 import br.com.roadway.routes.SandalCreateAccountRoute;
 
 @Component
-public class UserCreatorRoute extends SpringRouteBuilder {
+public class UserCreatorRoute extends RoadwayRouteBuilder {
 
 	public static String DIRECT_CREATE_USER = "direct:"+ UserCreatorRoute.class.getName();
 	

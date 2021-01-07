@@ -1,13 +1,13 @@
 package br.com.roadway.user.api.v1.creator;
 
 import org.apache.camel.model.dataformat.JsonLibrary;
-import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.stereotype.Component;
 
+import br.com.roadway.RoadwayRouteBuilder;
 import br.com.roadway.user.route.UserCreatorRoute;
 
 @Component
-public class UserCreatorApi extends SpringRouteBuilder {
+public class UserCreatorApi extends RoadwayRouteBuilder {
 
 	@Override
 	public void configure() throws Exception {

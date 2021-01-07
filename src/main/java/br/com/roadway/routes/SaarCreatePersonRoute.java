@@ -2,13 +2,14 @@ package br.com.roadway.routes;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.model.dataformat.JsonLibrary;
-import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
+import br.com.roadway.RoadwayRouteBuilder;
+
 @Component
-public class SaarCreatePersonRoute extends SpringRouteBuilder {
+public class SaarCreatePersonRoute extends RoadwayRouteBuilder {
 	
 	@Value("${saar.url}")
     private String saarUrl;
