@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.roadway.routes.ConnectCreateUsersRoute;
 import br.com.roadway.routes.SaarCreatePersonRoute;
+import br.com.roadway.routes.SandalCreateAccountRoute;
 
 @Component
 public class UserCreatorRoute extends SpringRouteBuilder {
@@ -22,6 +23,8 @@ public class UserCreatorRoute extends SpringRouteBuilder {
 			.toD(SaarCreatePersonRoute.DIRECT_SAAR_CREATE_PERSON)
 			.log("[USER-CREATOR-ROUTER] Criando User no connect.")
 			.toD(ConnectCreateUsersRoute.DIRECT_CONNECT_CREATE_USER)
+			.log("[USER-CREATOR-ROUTER] Criando conta no sandal.")
+			.toD(SandalCreateAccountRoute.DIRECT_SANDAL_CREATE_ACCOUNT)
 			.end();
 	}
 
