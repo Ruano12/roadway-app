@@ -1,11 +1,12 @@
 package br.com.roadway.user.route;
 
+import org.apache.camel.model.dataformat.JsonLibrary;
 import org.springframework.stereotype.Component;
 
 import br.com.roadway.RoadwayRouteBuilder;
-import br.com.roadway.routes.ConnectCreateUsersRoute;
-import br.com.roadway.routes.SaarCreatePersonRoute;
-import br.com.roadway.routes.SandalCreateAccountRoute;
+import br.com.roadway.routes.creator.ConnectCreateUsersRoute;
+import br.com.roadway.routes.creator.SaarCreatePersonRoute;
+import br.com.roadway.routes.creator.SandalCreateAccountRoute;
 
 @Component
 public class UserCreatorRoute extends RoadwayRouteBuilder {
@@ -25,6 +26,9 @@ public class UserCreatorRoute extends RoadwayRouteBuilder {
 			.toD(ConnectCreateUsersRoute.DIRECT_CONNECT_CREATE_USER)
 			.log("[USER-CREATOR-ROUTER] Criando conta no sandal.")
 			.toD(SandalCreateAccountRoute.DIRECT_SANDAL_CREATE_ACCOUNT)
+			.transform()
+			.groovy("resource:classpath:br/com/roadway/groovy/connect/ConnectCreateUser.groovy")
+			.marshal().json(JsonLibrary.Jackson)
 			.end();
 	}
 

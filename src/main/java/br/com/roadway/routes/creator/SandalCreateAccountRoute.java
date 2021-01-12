@@ -1,4 +1,4 @@
-package br.com.roadway.routes;
+package br.com.roadway.routes.creator;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.model.dataformat.JsonLibrary;
@@ -30,7 +30,7 @@ public class SandalCreateAccountRoute extends RoadwayRouteBuilder {
 			.log("token ${exchangeProperty.token}")
 			.setHeader("Authorization", simple("${exchangeProperty.token}"))
 			.setHeader(Exchange.HTTP_METHOD, constant(HttpMethod.POST))
-			.log("[ANDAL-CREATE-ACCOUNT] Criando conta - ${body}")
+			.log("[SANDAL-CREATE-ACCOUNT] Criando conta - ${body}")
 			.to("http4:"+sandalUrl+"/v1/digital-accounts?bridgeEndpoint=true")
 			.unmarshal().json(JsonLibrary.Jackson)
 			.log("[SANDAL-CREATE-ACCOUNT] Response - ${body}")
