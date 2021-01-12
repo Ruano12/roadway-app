@@ -7,7 +7,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
 import br.com.roadway.RoadwayRouteBuilder;
-import br.com.roadway.routes.creator.SaarCreatePersonRoute;
 
 @Component
 public class SaarGetPersonByIdRoute extends RoadwayRouteBuilder {

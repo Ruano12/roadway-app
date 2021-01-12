@@ -1,13 +1,11 @@
 package br.com.roadway.user.route;
 
-import org.apache.camel.model.dataformat.JsonLibrary;
 import org.springframework.stereotype.Component;
 
 import br.com.roadway.RoadwayRouteBuilder;
 import br.com.roadway.routes.browser.ConnectGetPersonIdRoute;
 import br.com.roadway.routes.browser.SaarGetPersonByIdRoute;
 import br.com.roadway.routes.browser.SandalGetAccountsByPerson;
-import br.com.roadway.routes.creator.SaarCreatePersonRoute;
 
 @Component
 public class UserBrowserRoute extends RoadwayRouteBuilder {
